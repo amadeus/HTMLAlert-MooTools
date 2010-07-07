@@ -1,0 +1,71 @@
+.Module.alert-dialogue {
+	position:absolute;
+	top:50%;
+	left:50%;
+
+	background-color:#fff;
+	padding:20px 20px 60px;
+
+	width:300px;
+	max-height:150px;
+	margin:-125px 0 0 -180px;
+
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+
+	-webkit-box-shadow:0 2px 3px rgba(0,0,0,.4);
+	-moz-box-shadow:0 2px 3px rgba(0,0,0,.4);
+	box-shadow:0 2px 3px rgba(0,0,0,.4);
+}
+
+.Module.alert-dialogue p {
+	font:bold 16px/1em Helvetica,Arial,sans-serif;
+	margin:0;
+	
+	text-shadow:0 1px 0 #fff;
+}
+
+.Module.alert-dialogue button {
+	font:bold 14px/1em Helvetica,Arial,sans-serif;
+	display:block;
+	position:absolute;
+	bottom:9px;
+	right:10px;
+	padding:0;
+	margin:0;
+	background:transparent;
+	border:none;
+	cursor:pointer;
+	height:27px;
+	width:52px;
+	border-bottom:1px solid #fff;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;	
+}
+
+.Module.alert-dialogue button span {
+	display:block;
+	padding:5px 10px;
+	width:30px;
+	background-color:#ccc;
+	color:#444;
+	text-shadow:0 1px 0 #dadada;
+	
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #999;
+}
+
+.Module.alert-dialogue,
+.Module.alert-dialogue button span {
+			background-image:-webkit-gradient(linear, 0% 0, 0% 100%, from(rgba(0,0,0,0)), to(rgba(0,0,0,.15)));
+	background-image:-moz-linear-gradient(0% 50% 270deg,rgba(0,0,0,0), rgba(0,0,0,.10));
+}
+
+.Module.alert-dialogue button:active span {
+	background-image:-webkit-gradient(linear, 0% 0, 0% 100%, from(rgba(0,0,0,.15)), to(rgba(0,0,0,0)));
+	background-image:-moz-linear-gradient(0% 50% 270deg,rgba(0,0,0,0), rgba(0,0,0,.10));
+}
