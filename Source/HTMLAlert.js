@@ -4,6 +4,14 @@ var HTMLAlert = new Class({
 	options:{
 		id:'HTMLAlert',
 		buttonText:'Ok'
+		/*
+		Events:
+			onDisplay:[Function]
+			onConfirm:[Function]
+			onComplete:[Function]
+			onAddMessage:[Function]
+			onResize:[Function]
+		*/
 	},
 
 	elements:{
@@ -76,6 +84,8 @@ var HTMLAlert = new Class({
 			html:'<span>'+this.options.buttonText+'</span>',
 			events:{ click:this.confirmMessage.bind(this) }
 		}).inject(els.dialogue);
+		
+		this.fireEvent('display');
 	},
 	
 	confirmMessage:function(e){
@@ -87,17 +97,22 @@ var HTMLAlert = new Class({
 		this.elements.currentMessage.set('text',this.messages[0]);
 		
 		this.messages.splice(0,1);
+		
+		this.fireEvent('confirm');
 	},
 	
 	clean:function(){
+		this.fireEvent('complete');
 		this.elements.container.destroy();
 	},
 
 	addMessage:function(message){
+		this.fireEvent('addMessage',message);
 		this.messages[this.messages.length] = message;
 	},
 
 	windowUpdate:function(){
+		this.fireEvent('resize');
 		this.options.windowInfo = this.elements.window.getSize();
 	},
 
